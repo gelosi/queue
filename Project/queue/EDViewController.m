@@ -37,19 +37,19 @@
 - (IBAction)addSuccess:(id)sender
 {
     EDQueueJob *success = [[EDQueueJob alloc] initWithTask:@"success" userInfo:@{ @"nyan" : @"cat" }];
-    [[EDQueue sharedInstance] enqueueJob:success];
+    [self.persistentTaskQueue enqueueJob:success];
 }
 
 - (IBAction)addFail:(id)sender
 {
     EDQueueJob *success = [[EDQueueJob alloc] initWithTask:@"fail" userInfo:nil];
-    [[EDQueue sharedInstance] enqueueJob:success];
+    [self.persistentTaskQueue enqueueJob:success];
 }
 
 - (IBAction)addCritical:(id)sender
 {
     EDQueueJob *success = [[EDQueueJob alloc] initWithTask:@"critical" userInfo:nil];
-    [[EDQueue sharedInstance] enqueueJob:success];
+    [self.persistentTaskQueue enqueueJob:success];
 }
      
 #pragma mark - Notifications
